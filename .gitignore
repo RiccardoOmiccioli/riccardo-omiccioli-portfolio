@@ -1,3 +1,6 @@
+# Docker
+.*.swp
+
 # Logs
 logs
 *.log
