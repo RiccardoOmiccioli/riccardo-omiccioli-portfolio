@@ -16,7 +16,7 @@ jobs:
           - dockerfile: ./frontend/Dockerfile
             image: ghcr.io/username/frontend
           - dockerfile: ./webhook/Dockerfile
-            image: ghcr.io/username/webhook
+            image: ghcr.io/RiccardoOmiccioli/webhook
     permissions:
       contents: read
       packages: write
