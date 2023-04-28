@@ -14,8 +14,8 @@ jobs:
       matrix:
         include:
           - dockerfile: ./frontend/Dockerfile
-            image: ghcr.io/riccardoomiccioli/frontend
-          - dockerfile: ./riccardoomiccioli/Dockerfile
+            image: ghcr.io/username/frontend
+          - dockerfile: ./webhook/Dockerfile
             image: ghcr.io/username/webhook
     permissions:
       contents: read
@@ -30,7 +30,7 @@ jobs:
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
-          password: ${{ secrets.GH_PACKAGE_TOKEN }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta
