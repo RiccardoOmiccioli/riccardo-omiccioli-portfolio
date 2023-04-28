@@ -14,8 +14,8 @@ jobs:
       matrix:
         include:
           - dockerfile: ./frontend/Dockerfile
-            image: ghcr.io/username/frontend
-          - dockerfile: ./webhook/Dockerfile
+            image: ghcr.io/riccardoomiccioli/frontend
+          - dockerfile: ./riccardoomiccioli/Dockerfile
             image: ghcr.io/username/webhook
     permissions:
       contents: read
