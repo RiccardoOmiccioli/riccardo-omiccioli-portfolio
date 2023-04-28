@@ -1,5 +1,4 @@
 FROM node:20-alpine
-CMD ["mkdir", "/app"]
 WORKDIR /app
 COPY . /app
 RUN npm install
