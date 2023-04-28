@@ -1,6 +1,7 @@
 FROM node:20-alpine
 WORKDIR /app
 COPY . /app
+CMD ["pwd"]
 RUN npm install
 RUN npm run build
 EXPOSE 3000 
