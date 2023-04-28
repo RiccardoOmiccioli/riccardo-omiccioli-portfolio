@@ -13,6 +13,6 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
     - name: Build the Docker image
       run: |
-         docker build . --tag ghcr.io/RiccardoOmiccioli/riccardo-omiccioli-portfolio:latest
-         docker run ghcr.io/RiccardoOmiccioli/riccardo-omiccioli-portfolio:latest
-         docker push ghcr.io/RiccardoOmiccioli/riccardo-omiccioli-portfolio:latest
+         docker build . --tag ghcr.io/riccardoomiccioli/riccardo-omiccioli-portfolio:latest
+         docker run ghcr.io/riccardoomiccioli/riccardo-omiccioli-portfolio:latest
+         docker push ghcr.io/riccardoomiccioli/riccardo-omiccioli-portfolio:latest
