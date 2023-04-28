@@ -1,6 +1,7 @@
 FROM node:20-alpine
-WORKDIR ~/
-COPY . ~/
+CMD ["mkdir", "/app"]
+WORKDIR /app
+COPY . /app
 RUN npm install
 RUN npm run build
 EXPOSE 3000 
