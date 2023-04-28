@@ -16,7 +16,7 @@ jobs:
           - dockerfile: ./frontend/Dockerfile
             image: ghcr.io/username/frontend
           - dockerfile: ./webhook/Dockerfile
-            image: ghcr.io/username/webhook
+            image: ghcr.io/RiccardoOmiccioli/webhook
     permissions:
       contents: read
       packages: write
@@ -25,6 +25,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - run: ls -la
+      
       - name: Log in to the Container registry
         uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
         with:
@@ -46,3 +48,4 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
