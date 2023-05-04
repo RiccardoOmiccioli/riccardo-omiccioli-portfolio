@@ -1,7 +1,8 @@
 ### How to deploy? ###
 #### Prerequisites ####
-* Docker
-* Docker-compose
+* Install docker
+* Install docker-compose
+* If you want to take advantage of automatic updates to the latest released version, it is necessary to first log in using the `sudo docker login ghcr.io` command and following instructions. (WARNING: The provided credentials are stored IN CLEAR in a configuration file called ~/.docker/config.json)
 #### Running using latest docker images ####
 * Clone the repository
 * Run `sudo docker-compose up -d`
