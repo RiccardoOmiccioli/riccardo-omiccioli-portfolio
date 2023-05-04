@@ -3,7 +3,11 @@ version: '3.1'
 services:
 
   frontend:
-    image: ghcr.io/riccardoomiccioli/riccardo-omiccioli-portfolio-frontend:main
+    container_name: riccardo-omiccioli-portfolio-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    restart: always
     ports:
       - "127.0.0.1:3000:3000"
 

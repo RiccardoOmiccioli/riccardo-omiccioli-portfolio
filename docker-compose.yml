@@ -3,19 +3,13 @@ version: '3.1'
 services:
 
   frontend:
-    container_name: riccardo-omiccioli-portfolio-frontend
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
+    image: ghcr.io/riccardoomiccioli/riccardo-omiccioli-portfolio-frontend:main
     restart: always
     ports:
       - "127.0.0.1:3000:3000"
 
   webhook:
-    container_name: riccardo-omiccioli-portfolio-webhook
-    build:
-      context: ./webhook
-      dockerfile: Dockerfile
+    image: ghcr.io/riccardoomiccioli/riccardo-omiccioli-portfolio-webhook:main
     restart: always
     ports:
       - "127.0.0.1:3001:3001"
