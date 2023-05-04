@@ -19,11 +19,11 @@ jobs:
       matrix:
         include:
           - dockerfile: ./frontend/Dockerfile
-            image: ghcr.io/${{ github.actor }}/${{ github.repository }}_frontend
-            packagepath: ./frontend
+            image: ghcr.io/${{ github.actor }}/${{ github.repository }}-frontend
+            path: ./frontend
           - dockerfile: ./webhook/Dockerfile
-            image: ghcr.io/${{ github.actor }}/${{ github.repository }}_webhook
-            packagepath: ./webhook
+            image: ghcr.io/${{ github.actor }}/${{ github.repository }}-webhook
+            path: ./webhook
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3      
@@ -41,15 +41,12 @@ jobs:
         with:
           images: ${{ matrix.image }}
 
-      - run: cd ${{ matrix.packagepath }}
-      - run: ls -la ./
-      - run: pwd
-
       - name: Build and push Docker image
         uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
         with:
           context: .
           file: ${{ matrix.dockerfile }}
+          working-directory: ${{ matrix.path }}
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
