@@ -19,7 +19,9 @@ jobs:
       matrix:
         include:
           - dockerfile: ./frontend/Dockerfile
+            image: ghcr.io/username/image1
           - dockerfile: ./webhook/Dockerfile
+            image: ghcr.io/username/image2
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3      
