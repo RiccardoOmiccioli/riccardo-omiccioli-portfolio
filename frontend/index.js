@@ -5,7 +5,7 @@ const PORT = 3000;
 
 const app = express();
 app.get('/', (req, res) => {
-	res.send('Hello world, this is riccardo.omiccioli.it');
+	res.send('Hello world, this is riccardo.omiccioli.it 2');
 });
 
 app.listen(PORT, HOST, () => {
