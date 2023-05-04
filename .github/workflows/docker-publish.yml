@@ -19,10 +19,10 @@ jobs:
       matrix:
         include:
           - dockerfile: ./frontend/Dockerfile
-            image: ghcr.io/${{ github.actor }}/${{ github.repository }}-frontend
+            image: ghcr.io/${{ github.repository }}-frontend
             context: ./frontend
           - dockerfile: ./webhook/Dockerfile
-            image: ghcr.io/${{ github.actor }}/${{ github.repository }}-webhook
+            image: ghcr.io/${{ github.repository }}-webhook
             context: ./webhook
     steps:
       - name: Checkout repository
